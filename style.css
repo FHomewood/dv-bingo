@@ -1,0 +1,36 @@
+body{
+	background: white;
+	font-family: sans-serif;
+}
+#page-wrapper{
+	display: flex;
+	justify-content: center;
+}
+#sections{
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+.heading-container{
+	display: flex;
+	justify-content: center;
+}
+#bingo-container{
+	display: grid;
+	grid-template-columns: repeat(5, 10vh);
+	gap: 1vh;
+}
+.bingo-box{
+	width: 10vh;
+	height: 10vh;
+
+	background: #ddd;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+
+	font-weight: bolder;
+	color: #777;
+}
