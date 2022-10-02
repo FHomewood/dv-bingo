@@ -29,7 +29,7 @@ for (let i = 0; i < bingo_elements.length; i++) {
 
     bingo_elements[i].addEventListener("click", function(e) {
         var background = bingo_elements[i].style.background
-        if (background == '') { bingo_elements[i].style.background = '#fdd' }
+        if (background == '') { bingo_elements[i].style.background = '#fbb' }
         else { bingo_elements[i].style.background = '' }
     })
 

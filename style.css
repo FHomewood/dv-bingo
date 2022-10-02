@@ -19,6 +19,11 @@ body{
 	display: grid;
 	grid-template-columns: repeat(5, 10vh);
 	gap: 1vh;
+
+	-moz-transition:  all .2s ease-in-out;
+	-o-transition:  all .2s ease-in-out;
+	-webkit-transition:  all .2s ease-in-out;
+	transition:  all .2s ease-in-out;
 }
 .bingo-box{
 	width: 10vh;
@@ -33,12 +38,6 @@ body{
 
 	font-weight: bolder;
 	color: #777;
-
-	-moz-transition:  all .2s ease-in-out;
-	-o-transition:  all .2s ease-in-out;
-	-webkit-transition:  all .2s ease-in-out;
-	transition:  all .2s ease-in-out;
-
 }
 .bingo-box:hover{
 	background: #aaa;
@@ -46,3 +45,44 @@ body{
 .bingo-box:click{
 	background: #edd;
 }
+#line-container{
+}
+.bingo-line{
+	position: absolute;
+	display: none;
+	background: #f99;
+	border-radius: 2vh;
+}
+.bingo-line:hover{
+	display: unset;
+}
+.bingo-column{
+	width: 1vh;
+	height: 52vh;
+	bottom: 1vh;
+}
+#col1{left: 4.5vh;}
+#col2{left: 15.5vh;}
+#col3{left: 26.5vh;}
+#col4{left: 37.5vh;}
+#col5{left: 48.5vh;}
+
+.bingo-row{
+	width: 52vh;
+	height: 1vh;
+	left: 1vh;
+}
+#row1{bottom: 4.5vh;}
+#row2{bottom: 15.5vh;}
+#row3{bottom: 26.5vh;}
+#row4{bottom: 37.5vh;}
+#row5{bottom: 48.5vh;}
+
+.bingo-diag{
+	width: 72vh;
+	height: 1vh;
+	left: -9vh;
+	bottom: 26.5vh;
+}
+#diag1{transform: rotateZ(45deg);}
+#diag2{transform: rotateZ(-45deg);}
