@@ -32,6 +32,7 @@ body{
 .bingo-box{
 	width: 10vh;
 	height: 10vh;
+	border-radius: 0.5vh;
 
 	background: #ddd;
 
