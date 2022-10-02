@@ -27,6 +27,12 @@ for (let i = 0; i < bingo_elements.length; i++) {
 	current_sheet = current_sheet + prompt;
 	bingo_elements[i].innerText = bingo_options[prompt];
 
+    bingo_elements[i].addEventListener("click", function(e) {
+        var background = bingo_elements[i].style.background
+        if (background == '') { bingo_elements[i].style.background = '#fdd' }
+        else { bingo_elements[i].style.background = '' }
+    })
+
 }
 
 function MurmurHash3(string) {
