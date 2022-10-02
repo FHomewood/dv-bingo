@@ -70,22 +70,22 @@ function SimpleFastCounter32(seed_1, seed_2, seed_3, seed_4) {
 function UpdateBingo(){
     let lines = document.getElementsByClassName('bingo-line')
     for (let i = 0; i < lines.length; i++){
-        lines[i].style.display="none";
+        lines[i].style.backgroundColor = "rgba(255,128,128,0.0";
     }
-    if (CheckLine(0,1)) { document.getElementById('row5').style.display = "unset"}
-    if (CheckLine(5,1)) { document.getElementById('row4').style.display = "unset"}
-    if (CheckLine(10,1)){ document.getElementById('row3').style.display = "unset"}
-    if (CheckLine(15,1)){ document.getElementById('row2').style.display = "unset"}
-    if (CheckLine(20,1)){ document.getElementById('row1').style.display = "unset"}
+    if (CheckLine(0,1)) { document.getElementById('row5').style.backgroundColor = "rgba(255,128,128,0.8"}
+    if (CheckLine(5,1)) { document.getElementById('row4').style.backgroundColor = "rgba(255,128,128,0.8"}
+    if (CheckLine(10,1)){ document.getElementById('row3').style.backgroundColor = "rgba(255,128,128,0.8"}
+    if (CheckLine(15,1)){ document.getElementById('row2').style.backgroundColor = "rgba(255,128,128,0.8"}
+    if (CheckLine(20,1)){ document.getElementById('row1').style.backgroundColor = "rgba(255,128,128,0.8"}
 
-    if (CheckLine(0,5)){ document.getElementById('col1').style.display = "unset"}
-    if (CheckLine(1,5)){ document.getElementById('col2').style.display = "unset"}
-    if (CheckLine(2,5)){ document.getElementById('col3').style.display = "unset"}
-    if (CheckLine(3,5)){ document.getElementById('col4').style.display = "unset"}
-    if (CheckLine(4,5)){ document.getElementById('col5').style.display = "unset"}
+    if (CheckLine(0,5)){ document.getElementById('col1').style.backgroundColor = "rgba(255,128,128,0.8"}
+    if (CheckLine(1,5)){ document.getElementById('col2').style.backgroundColor = "rgba(255,128,128,0.8"}
+    if (CheckLine(2,5)){ document.getElementById('col3').style.backgroundColor = "rgba(255,128,128,0.8"}
+    if (CheckLine(3,5)){ document.getElementById('col4').style.backgroundColor = "rgba(255,128,128,0.8"}
+    if (CheckLine(4,5)){ document.getElementById('col5').style.backgroundColor = "rgba(255,128,128,0.8"}
 
-    if (CheckLine(0,6)){ document.getElementById('diag1').style.display = "unset"}
-    if (CheckLine(4,4)){ document.getElementById('diag2').style.display = "unset"}
+    if (CheckLine(0,6)){ document.getElementById('diag1').style.backgroundColor = "rgba(255,128,128,0.8"}
+    if (CheckLine(4,4)){ document.getElementById('diag2').style.backgroundColor = "rgba(255,128,128,0.8"}
 }
 function CheckLine(start, increment) {
     cleared = 0;

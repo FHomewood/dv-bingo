@@ -1,4 +1,8 @@
 body{
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 	background: white;
 	font-family: sans-serif;
 }
@@ -43,6 +47,7 @@ body{
 	background: #aaa;
 }
 .bingo-text{
+
 	margin: 0.2vw;
 }
 .bingo-box:click{
@@ -52,9 +57,15 @@ body{
 }
 .bingo-line{
 	position: absolute;
-	display: none;
-	background: #f99;
+	background: rgba(255,128,128,0.0);
+
 	border-radius: 2vh;
+	pointer-events: none;
+
+	-moz-transition:  all .2s linear;
+	-o-transition:  all .2s linear;
+	-webkit-transition:  all .2s linear;
+	transition:  all .2s linear;
 }
 .bingo-line:hover{
 	display: unset;
