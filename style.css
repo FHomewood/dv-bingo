@@ -42,6 +42,9 @@ body{
 .bingo-box:hover{
 	background: #aaa;
 }
+.bingo-text{
+	margin: 0.2vw;
+}
 .bingo-box:click{
 	background: #edd;
 }

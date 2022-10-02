@@ -18,6 +18,7 @@ const date = new Date().toISOString().split('T')[0];
 let generate_seed = MurmurHash3(identifier + date);
 let random_number = SimpleFastCounter32(generate_seed(), generate_seed());
 
+var bingo_text = document.getElementsByClassName('bingo-text');
 var bingo_elements = document.getElementsByClassName('bingo-box');
 var current_sheet = [];
 for (let i = 0; i < bingo_elements.length; i++) {
@@ -25,15 +26,18 @@ for (let i = 0; i < bingo_elements.length; i++) {
 		var prompt = Math.floor(bingo_options.length*random_number());
 	} while (current_sheet.includes(prompt))
 	current_sheet = current_sheet + prompt;
-	bingo_elements[i].innerText = bingo_options[prompt];
+	bingo_text[i].innerText = bingo_options[prompt];
 
     bingo_elements[i].addEventListener("click", function(e) {
         var background = bingo_elements[i].style.background
         if (background == '') { bingo_elements[i].style.background = '#fbb' }
         else { bingo_elements[i].style.background = '' }
+        UpdateBingo()
     })
-
 }
+
+
+
 
 function MurmurHash3(string) {
     let i = 0;
@@ -61,4 +65,35 @@ function SimpleFastCounter32(seed_1, seed_2, seed_3, seed_4) {
       seed_3 = seed_3 + cast32 | 0;
       return (cast32 >>> 0) / 4294967296;
     }
+}
+
+function UpdateBingo(){
+    let lines = document.getElementsByClassName('bingo-line')
+    for (let i = 0; i < lines.length; i++){
+        lines[i].style.display="none";
+    }
+    if (CheckLine(0,1)) { document.getElementById('row5').style.display = "unset"}
+    if (CheckLine(5,1)) { document.getElementById('row4').style.display = "unset"}
+    if (CheckLine(10,1)){ document.getElementById('row3').style.display = "unset"}
+    if (CheckLine(15,1)){ document.getElementById('row2').style.display = "unset"}
+    if (CheckLine(20,1)){ document.getElementById('row1').style.display = "unset"}
+
+    if (CheckLine(0,5)){ document.getElementById('col1').style.display = "unset"}
+    if (CheckLine(1,5)){ document.getElementById('col2').style.display = "unset"}
+    if (CheckLine(2,5)){ document.getElementById('col3').style.display = "unset"}
+    if (CheckLine(3,5)){ document.getElementById('col4').style.display = "unset"}
+    if (CheckLine(4,5)){ document.getElementById('col5').style.display = "unset"}
+
+    if (CheckLine(0,6)){ document.getElementById('diag1').style.display = "unset"}
+    if (CheckLine(4,4)){ document.getElementById('diag2').style.display = "unset"}
+}
+function CheckLine(start, increment) {
+    cleared = 0;
+    for (let i = 0; i < 5; i++){
+        index = start + i * increment
+        if (bingo_elements[index].style.background){
+            cleared++;
+        }
+    }
+    return cleared >= 5;
 }
